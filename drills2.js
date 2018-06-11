@@ -55,3 +55,44 @@ function decodeString(string) {
 }
 
 console.log(decodeString('craft block argon meter bells brown croon droop'));
+
+function daysInMonth(month, leapYear) {
+  switch (month) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      return month + ' has 31 days';
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      return month + ' has 30 days';
+    case 'February':
+      if (leapYear === true) {
+        return month + ' has 29 days';
+      } else {
+        return month + ' has 28 days';
+      }
+    default:
+      return 'Must provide a valid month';  
+  }
+}
+
+console.log(daysInMonth('January'));
+console.log(daysInMonth('February'));
+console.log(daysInMonth('February', true));
+console.log(daysInMonth('March'));
+console.log(daysInMonth('April'));
+console.log(daysInMonth('May'));
+console.log(daysInMonth('June'));
+console.log(daysInMonth('July'));
+console.log(daysInMonth('August'));
+console.log(daysInMonth('September'));
+console.log(daysInMonth('October'));
+console.log(daysInMonth('November'));
+console.log(daysInMonth('December'));
+console.log(daysInMonth('whatever'));
