@@ -35,13 +35,13 @@ function decode (word) {
   let firstChar = word[0];
   switch (firstChar) {
     case 'a':
-      return '2';
+      return word[1];
     case 'b':
-      return '3';
+      return word[2];
     case 'c':
-      return '4';
+      return word[3];
     case 'd':
-      return '5';
+      return word[4];
     default:
       return ' ';
   }
