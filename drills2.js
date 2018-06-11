@@ -43,7 +43,7 @@ function decode (word) {
     case 'd':
       return '5';
     default:
-      return " ";
+      return ' ';
   }
 }
 
@@ -96,3 +96,51 @@ console.log(daysInMonth('October'));
 console.log(daysInMonth('November'));
 console.log(daysInMonth('December'));
 console.log(daysInMonth('whatever'));
+
+function rockPaperScissors(choice){
+  //1 - Rock
+  //2 - Paper
+  //3 - Scissors
+
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  let winner = '';
+
+  if(choice < 0 || choice > 3 || typeof(choice) !== 'number'){
+    console.error('Invalid input!');
+    return;
+  }
+  
+  switch(choice - randomNo){
+    case 2:
+    case -1:
+      winner = ' You lose...';
+      break;
+    case 1:
+    case -2:
+      winner = ' You win!';
+      break;
+    case 0:
+      winner = ' Tie.';
+      break;
+    default:
+      winner = ' Something went wrong?';
+  }
+    
+  console.log(`You chose ${convertRPSValue(choice)}, opponent chose ${convertRPSValue(randomNo)}.` + winner);
+
+}
+
+function convertRPSValue(val){
+  switch(val){
+    case 1: return 'rock';
+    case 2: return 'paper';
+    case 3: return 'scissors';
+    default: return '????';
+  }
+}
+
+rockPaperScissors(1);
+rockPaperScissors(2);
+rockPaperScissors(3);
+rockPaperScissors(4);
+rockPaperScissors('Jeff');
