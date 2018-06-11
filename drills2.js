@@ -28,3 +28,30 @@ beyond(5);
 beyond(-5);
 beyond(0);
 beyond('HAHAHA I AM USING THE INTERNET');
+
+
+function decode (word) {
+  //take the first char
+  let firstChar = word[0];
+  switch (firstChar) {
+    case 'a':
+      return '2';
+    case 'b':
+      return '3';
+    case 'c':
+      return '4';
+    case 'd':
+      return '5';
+    default:
+      return " ";
+  }
+}
+
+function decodeString(string) {
+  let splitString = string.split(' ');
+  return splitString.map(function(word){
+    return decode(word);
+  }).join('');
+}
+
+console.log(decodeString('craft block argon meter bells brown croon droop'));
