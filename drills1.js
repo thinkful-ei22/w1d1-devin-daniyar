@@ -5,6 +5,11 @@ function whoAmI(name, age){
     console.error('Arguments not valid');
     return;
   }
+  if(typeof(name) !== 'string' || typeof(age) !== 'number'){
+    console.error('Invalid argument type');
+    return;
+  }
+
   let yob;
   try {
     yob = yearOfBirth(age);
@@ -28,3 +33,5 @@ function yearOfBirth(age) {
 whoAmI('John', 29);
 whoAmI('John', -5);
 whoAmI();
+whoAmI(23, 233);
+whoAmI('Jack', 'twenty two');
